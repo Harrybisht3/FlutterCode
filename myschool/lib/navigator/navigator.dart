@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myschool/home.dart';
 import 'package:myschool/register.dart';
 
 class MyNavigator {
@@ -12,6 +13,13 @@ class MyNavigator {
     Navigator.push(context,
         new MaterialPageRoute(
             builder: (context) => new RegisterPage()));
+
+  }
+
+  static void goToHome(BuildContext context) {
+    Navigator.push(context,
+        new MaterialPageRoute(
+            builder: (context) => new HomePage()));
 
   }
 

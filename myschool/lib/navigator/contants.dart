@@ -5,9 +5,13 @@ class Constants {
   static const String select_userType = "Select User Type";
   static const String login_button = "Login";
   static const String register_button = "Register";
+  static const String register_submit = "Submit";
   static const String enterUserId = "Enter User Id";
   static const String enterUserEmail = "Enter Email";
   static const String enter_phonenumber = "Enter Phone Number";
+  static const String enter_password = "Enter Password";
+  static const String confirm_password = "Confirm Password";
+  static const String dashboard = "Dashboard";
   static const String wt1 = "WELCOME";
   static const String wc1 =
       "Flutkart is Premium Online Shopping\n Platform for Everyone";
