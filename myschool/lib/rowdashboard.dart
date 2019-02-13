@@ -24,13 +24,18 @@ class RowDashBoard extends StatelessWidget {
             children: <Widget>[
               Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0)),
-              CircleAvatar(
-                backgroundColor: Colors.red,
-                radius: 20,
-                child: Image.network(
-                 "http://lorempixel.com/400/200/",
-                ),
-              ),
+              Container(
+                  width: 30.0,
+                  height: 30.0,
+                  decoration: new BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: new DecorationImage(
+                          fit: BoxFit.fill,
+                          image: new NetworkImage(
+                              "https://i.imgur.com/BoN9kdC.png")
+                      )
+                  )),
+
               Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0)),
               Text(
