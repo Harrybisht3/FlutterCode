@@ -10,12 +10,14 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   List<String> _listSchools;
   List<String> _userType;
+  String selectedValue;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _listSchools = [Constants.select_school, 'A', 'B', 'C', 'D'];
+    selectedValue=_listSchools[0];
     _userType = [
       Constants.select_userType,
       'Student',
@@ -27,14 +29,14 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    String selectedValue;
+
     // TODO: implement build
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
         body: new Container(
           decoration: new BoxDecoration(
               image: new DecorationImage(
-            image: AssetImage("images/ic_background.png"),
+            image: AssetImage("images/ic_bg.png"),
             fit: BoxFit.cover,
           )),
           child: new Stack(
@@ -79,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   },
                                   items: _listSchools.map((String value) {
                                     return new DropdownMenuItem<String>(
-                                      value: selectedValue,
+                                      value: value,
                                       child: new Text(value,
                                           style: TextStyle(color: Colors.red)),
                                     );

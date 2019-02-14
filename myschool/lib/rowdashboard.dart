@@ -9,11 +9,7 @@ class RowDashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new InkWell(
-      child: SizedBox(
-        height: 50.0,
-        width: 150.0,
-        child: Card(
+    return new Card(
           elevation: 1.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.0),
@@ -41,6 +37,7 @@ class RowDashBoard extends StatelessWidget {
               Text(
                 post.title,
                 overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
                 maxLines: 5,
                 style: TextStyle(
                   fontSize: 12.0,
@@ -50,8 +47,6 @@ class RowDashBoard extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
     );
   }
 }

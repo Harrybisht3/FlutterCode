@@ -36,7 +36,7 @@ class LoginPageState extends State<LoginPage>
         body: new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                image: new AssetImage("images/ic_background.png"),
+                image: new AssetImage("images/ic_bg.png"),
                 fit: BoxFit.cover,
               ),
             ),
