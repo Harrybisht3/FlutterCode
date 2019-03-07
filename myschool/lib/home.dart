@@ -31,10 +31,36 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.zero,
             children: <Widget>[
               new DrawerHeader(
-                child: new Text(
-                  Constants.wt1,
-                  style: TextStyle(color: Colors.black),
-                ),
+                child: new Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+                  SizedBox(child:  Container(
+                      decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: new DecorationImage(
+                              fit: BoxFit.fill,
+                              image: new NetworkImage(
+                                  "https://i.imgur.com/BoN9kdC.png")
+                          )
+                      )),height: 80.0,width: 80.0),
+                  Row(mainAxisAlignment:MainAxisAlignment.spaceEvenly,children: <Widget>[ SizedBox(child:  Container(
+                      decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: new DecorationImage(
+                              fit: BoxFit.fill,
+                              image: new NetworkImage(
+                                  "https://i.imgur.com/BoN9kdC.png")
+                          )
+                      )),height: 30.0,width: 30.0), SizedBox(child:  Container(
+                      decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: new DecorationImage(
+                              fit: BoxFit.fill,
+                              image: new NetworkImage(
+                                  "https://i.imgur.com/BoN9kdC.png")
+                          )
+                      )),height: 30.0,width: 30.0)],)
+
+                ],),
                 decoration: BoxDecoration(
                   color: Colors.blue,
                 ),
@@ -50,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               fit: BoxFit.cover,
             ),
           ),
-          child: new Stack(
+          child: new Column(
             children: <Widget>[
               new Container(
                 decoration: new BoxDecoration(
@@ -69,26 +95,29 @@ class _HomePageState extends State<HomePage> {
                       )),
                   new Column(children: <Widget>[
                     new Text("Name of Student"),
+                    Padding(padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 2.0),),
                     new Text('Class Name')
                   ],),
 
                 ],
               ),),
-              new Container(
-                  child: new FutureBuilder<List<Post>>(
-                    future: NetworkUtil.fetchPost(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        return _buildGridRow(snapshot.data);
-                      } else if (snapshot.hasError) {
-                        return Text("${snapshot.error}");
-                      }
-                      // By default, show a loading spinner
-                      return CircularProgressIndicator(
-                        backgroundColor: Colors.blueAccent,
-                      );
-                    },
-                  ))
+      Expanded(child: new Container(
+          child: new FutureBuilder<List<Post>>(
+            future: NetworkUtil.fetchPost(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return _buildGridRow(snapshot.data);
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              }
+              // By default, show a loading spinner
+              return Center(child: SizedBox(child: CircularProgressIndicator(
+                backgroundColor: Colors.blueAccent,
+              ),height: 30.0
+                  ,width: 30.0));
+            },
+          ))),
+
             ],
           ),
         ));
